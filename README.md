@@ -1,16 +1,30 @@
-# yes_no
+# SIM_NÃO 📱😂
 
-A new Flutter project.
+Um app Flutter simples e divertido para fins de **aprendizado**, que funciona como um "bate-papo de sim ou não" usando memes animados!
 
-## Getting Started
+## 🧠 Ideia
 
-This project is a starting point for a Flutter application.
+O **SIM_NÃO** é um aplicativo que simula uma conversa em que você faz perguntas e o app responde com um **GIF animado** de meme expressando "sim" ou "não".
 
-A few resources to get you started if this is your first Flutter project:
+Se você digitar uma frase que termina com uma interrogação (`?`), o app irá:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **Interpretar** que você está fazendo uma pergunta.
+2. **Escolher aleatoriamente** entre "sim" ou "não".
+3. **Buscar um GIF** correspondente (usando a API do [Giphy](https://giphy.com/) ou similar).
+4. **Mostrar o GIF** como resposta, de forma engraçada e leve.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🎯 Objetivos do Projeto
+
+- Aprender a estruturar um app Flutter com boas práticas.
+- Usar **integração com API externa (REST)**.
+- Trabalhar com **consumo de GIFs** e exibição com animações.
+- Entender o fluxo **input → lógica → resposta visual**.
+
+---
+
+## 📦 Tecnologias e Pacotes Usados
+
+- [Flutter](https://flutter.dev/)
+
