@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:yes_no/presentation/widgets/chat/my_message_bubble.dart';
+import 'package:yes_no/presentation/widgets/chat/other_message_bubble.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -14,7 +15,7 @@ class ChatScreen extends StatelessWidget {
             backgroundImage:  NetworkImage('https://cdn-icons-png.flaticon.com/512/1430/1430402.png'),
           ),
         ),
-        title: const Text('Paciente'),
+        title: const Text('Paciente 1'),
       ),
       body: _ChatView(),
     );
@@ -34,9 +35,12 @@ class _ChatView extends StatelessWidget {
             Expanded(child: ListView.builder(
               itemCount: 100,
               itemBuilder:(context, index) {
-              return MyMessageBubble();
+              if (index % 2 == 0) {
+                return const MyMessageBubble();
+              }
+              return const OtherMessageBubble();
             },)),
-            Text('Aqui terá o campo de texto')
+            const Text('Aqui terá o campo de texto')
           ],
         ),
       ),
