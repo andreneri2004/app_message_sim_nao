@@ -25,6 +25,8 @@ class OtherMessageBubble extends StatelessWidget {
         const SizedBox(height: 5),
 
         _ImageBubble(),
+
+        const SizedBox(height: 5),
       ],
     );
   }
@@ -33,6 +35,28 @@ class OtherMessageBubble extends StatelessWidget {
 class _ImageBubble extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final size = MediaQuery.of(context).size;
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: Image.network(
+        'https://yesno.wtf/assets/yes/14-b57c6dc03aa15a4b18f53eb50d6197ee.gif',
+        fit: BoxFit.cover,
+        width: size.width * 0.7,
+        height: 150,
+
+        loadingBuilder: (context, child, loadingProgress) {
+          if(loadingProgress == null) {
+            return child;
+          }
+          return Container(
+            width: size.width * 0.7,
+            height: 150,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: const Text('digitando...'),
+          );
+        },
+      ),
+    );
   }
 }
