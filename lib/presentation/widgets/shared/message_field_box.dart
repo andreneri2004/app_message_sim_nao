@@ -5,21 +5,38 @@ class MessageFieldBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      decoration: InputDecoration(
+  
+    final outlineInputBorder = UnderlineInputBorder(
+      borderRadius: BorderRadius.circular(20),
+      borderSide: const BorderSide(color: Colors.transparent),
+    );
+
+
+    final  inputDecoration = InputDecoration(
         filled: true,
         fillColor: Theme.of(context).colorScheme.secondaryContainer,
         hintText: 'Digite uma mensagem',
-        suffixIcon: IconButton(onPressed: (){}, icon: const Icon(Icons.send_outlined)),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide.none,
+        suffixIcon: IconButton(
+          onPressed: () {},
+          icon: const Icon(Icons.send_outlined),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      ),
-      style: TextStyle(color: Theme.of(context).colorScheme.onSecondaryContainer),
-      maxLines: null, // Allows for multiple lines
-      keyboardType: TextInputType.multiline,
+        border: outlineInputBorder,
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 20,
+          vertical: 10,
+        ),
+      );
+
+
+    return TextFormField(
+      decoration: inputDecoration,
+      onFieldSubmitted: (value) {
+        print('Mensagem enviada: $value');
+      },
+      onChanged: (value) {
+        print('Usuário digitou: $value');
+      },
+      
     );
   }
 }

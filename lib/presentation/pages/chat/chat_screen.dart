@@ -34,7 +34,7 @@ class _ChatView extends StatelessWidget {
         child: Column(
           children: [
             Expanded(child: ListView.builder(
-              itemCount: 100,
+              itemCount: 2,
               itemBuilder:(context, index) {
               if (index % 2 == 0) {
                 return const MyMessageBubble();
