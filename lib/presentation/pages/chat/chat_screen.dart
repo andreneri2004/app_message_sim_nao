@@ -10,13 +10,15 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const  Padding(
+        leading: const Padding(
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
-            backgroundImage:  NetworkImage('https://cdn-icons-png.flaticon.com/512/1430/1430402.png'),
+            backgroundImage: NetworkImage(
+              'https://cdn-icons-png.flaticon.com/512/1430/1430402.png',
+            ),
           ),
         ),
-        title: const Text('Paciente 1'),
+        title: const Text('SOP - Ocorrências'),
       ),
       body: _ChatView(),
     );
@@ -24,8 +26,6 @@ class ChatScreen extends StatelessWidget {
 }
 
 class _ChatView extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,15 +33,18 @@ class _ChatView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
-            Expanded(child: ListView.builder(
-              itemCount: 2,
-              itemBuilder:(context, index) {
-              if (index % 2 == 0) {
-                return const MyMessageBubble();
-              }
-              return const OtherMessageBubble();
-            },)),
-            const  MessageFieldBox(),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 20,
+                itemBuilder: (context, index) {
+                  if (index % 2 == 0) {
+                    return const MyMessageBubble();
+                  }
+                  return const OtherMessageBubble();
+                },
+              ),
+            ),
+            const MessageFieldBox(),
           ],
         ),
       ),
