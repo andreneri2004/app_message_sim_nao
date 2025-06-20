@@ -3,7 +3,7 @@ import 'package:yes_no/domain/entities/message.dart';
 
 class ChatProvider extends ChangeNotifier {
   List<Message> messageList = [
-    Message(text: 'Ola, tudo bem?', fromWho: FromWho.bot),
+    Message(text: 'Ola, tudo bemdd?', fromWho: FromWho.bot),
     Message(text: 'Tudo bem, qual a occorência', fromWho: FromWho.bot),
   ];
 
