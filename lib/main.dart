@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       providers: [ChangeNotifierProvider(create: (_) => ChatProvider())],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: AppTheme(selectedColor: 5).theme(),
-        title: 'Yes No App',
+        theme: AppTheme(selectedColor: 4).theme(),
+        title: 'Pulsar - Ocorrências',
         home: const ChatScreen(),
       ),
     );

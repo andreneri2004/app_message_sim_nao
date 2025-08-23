@@ -21,7 +21,7 @@ class ChatScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: const Text('SOP - Ocorrências'),
+        title: const Text('Pulsar - Ocorrências'),
       ),
       body: _ChatView(),
     );
@@ -40,17 +40,21 @@ class _ChatView extends StatelessWidget {
           children: [
             Expanded(
               child: ListView.builder(
+                controller: chatProvider.chatScrollController,
                 itemCount: chatProvider.messageList.length,
                 itemBuilder: (context, index) {
                   final message = chatProvider.messageList[index];
-
-                  return (message.fromWho = FromWho.bot)
-                      ? MyMessageBubble()
-                      : OtherMessageBubble();
+                  if (message.fromWho == FromWho.otherMessage) {
+                    return OtherMessageBubble();
+                  }
+                  return MyMessageBubble(message: message);
                 },
               ),
             ),
-            const MessageFieldBox(),
+            MessageFieldBox(
+              //onValue: (value) => chatProvider.sendMenssage(value),
+              onValue: chatProvider.sendMenssage,
+            ),
           ],
         ),
       ),

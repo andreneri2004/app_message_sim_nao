@@ -24,8 +24,7 @@ class OtherMessageBubble extends StatelessWidget {
         ),
         const SizedBox(height: 5),
 
-        _ImageBubble(),
-
+        //_ImageBubble(),
         const SizedBox(height: 5),
       ],
     );
@@ -46,7 +45,7 @@ class _ImageBubble extends StatelessWidget {
         height: 150,
 
         loadingBuilder: (context, child, loadingProgress) {
-          if(loadingProgress == null) {
+          if (loadingProgress == null) {
             return child;
           }
           return Container(

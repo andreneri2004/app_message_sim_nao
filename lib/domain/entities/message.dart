@@ -1,4 +1,4 @@
-enum FromWho { user, bot }
+enum FromWho { myMessage, otherMessage }
 
 class Message {
   final String text;
