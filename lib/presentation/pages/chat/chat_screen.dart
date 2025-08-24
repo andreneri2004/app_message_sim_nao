@@ -21,7 +21,7 @@ class ChatScreen extends StatelessWidget {
             ),
           ),
         ),
-        title: const Text('Pulsar - Ocorrências'),
+        title: const Text('Sim ou Não'),
       ),
       body: _ChatView(),
     );

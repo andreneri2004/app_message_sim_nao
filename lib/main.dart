@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: AppTheme(selectedColor: 4).theme(),
-        title: 'Pulsar - Ocorrências',
+        title: 'Sim ou Não',
         home: const ChatScreen(),
       ),
     );
